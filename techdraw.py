@@ -548,9 +548,9 @@ class OBJECT_OT_SFRenderButton(bpy.types.Operator):
             bpy.context.scene.render.resolution_x = resolX
             
             if (xdim - ydim) >= 0:
-                bpy.context.scene.render.resolution_y = resolX * (ydim/xdim)
+                bpy.context.scene.render.resolution_y = int(resolX * (ydim/xdim))
             if (xdim - ydim) < 0:
-                bpy.context.scene.render.resolution_y = resolX * (ydim/xdim)
+                bpy.context.scene.render.resolution_y = int(resolX * (ydim/xdim))
 
             bpy.ops.object.select_all(action='DESELECT')        
             target_Camera.select_set(state=True)
